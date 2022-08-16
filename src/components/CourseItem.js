@@ -1,6 +1,7 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import globalStyles from '../styles/globalStyles';
+// import {Icon} from 'react-native-vector-icons';
 
 const CourseItem = props => {
   return (
@@ -8,10 +9,12 @@ const CourseItem = props => {
       <View style={styles.imageContainer}>
         <Image style={styles.images} source={{uri: props.image}} />
       </View>
+
       <View style={styles.courseContainerDetails}>
         <Text style={styles.courseTitle}>{props.title}</Text>
         <Text style={styles.coursePrice}>{props.price.toFixed(2)}</Text>
       </View>
+      <View style={styles.iconsContainer}>{/* <Icon name="rocket" /> */}</View>
     </View>
   );
 };
@@ -24,7 +27,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 300,
     margin: 25,
-    borderColor: globalStyles.lightGray,
+    borderColor: globalStyles.darkGray,
   },
   imageContainer: {
     width: '100%',
@@ -49,5 +52,12 @@ const styles = StyleSheet.create({
   coursePrice: {
     color: 'globalStyles.darkGray',
     fontSize: 16,
+  },
+  iconsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: '20%',
+    paddingHorizontal: 30,
   },
 });
